@@ -3,7 +3,7 @@
  const items=Array.isArray(window.collectionItems)?window.collectionItems:[];
  const lightbox=document.querySelector(".lightbox"),preview=lightbox?.querySelector(".lightbox-image"),closeButton=lightbox?.querySelector("button");
  const filters=document.querySelectorAll("[data-filter]");
- const setTile=(el,n)=>{const col=n%4,row=Math.floor(n/4);el.style.backgroundImage='url("Images/portfolio-sprite.webp")';el.style.backgroundSize="400% 500%";el.style.backgroundPosition=`${col/3*100}% ${row/4*100}%`};
+ const setTile=(el,n)=>{el.style.backgroundImage="radial-gradient(ellipse at 50% 35%,rgba(134,103,255,.22),transparent 58%),linear-gradient(145deg,#191722,#0b0b10)";};
  items.forEach((item,i)=>{
   const card=document.createElement("article");card.className="collection-card reveal";card.dataset.category=item.category||"All";
   const art=document.createElement("div");art.className="collection-card-image";art.setAttribute("role","img");art.setAttribute("aria-label",item.title||"Portfolio artwork");setTile(art,Number(item.tile));
