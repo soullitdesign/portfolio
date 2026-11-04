@@ -1,6 +1,6 @@
 (() => {
  const reduced=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
- document.querySelectorAll("[data-tile]").forEach(el=>{const i=Number(el.dataset.tile);if(Number.isInteger(i)&&i>=0&&i<20){const col=i%4,row=Math.floor(i/4);el.style.backgroundPosition=`${col/3*100}% ${row/4*100}%`;el.style.backgroundImage='url("Images/portfolio-sprite.webp")';}});
+ document.querySelectorAll("[data-tile]").forEach(el=>{el.classList.add("tile-placeholder")});
  const toggle=document.querySelector(".menu-toggle"),nav=document.querySelector("#site-nav");
  if(toggle&&nav){toggle.addEventListener("click",()=>{const open=toggle.getAttribute("aria-expanded")==="true";toggle.setAttribute("aria-expanded",String(!open));nav.classList.toggle("open",!open)});nav.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>{toggle.setAttribute("aria-expanded","false");nav.classList.remove("open")}))}
  const reveals=document.querySelectorAll(".reveal");
