@@ -827,3 +827,9 @@ body.soullit-red{
 @media(prefers-reduced-motion:reduce){
   .lightbox,.lightbox button,.collection-group-grid .collection-card,.collection-group-grid .collection-card-image{transition:none!important}
 }
+
+
+/* Header uses the same Soullit Design logo as the footer */
+.sp-header .sp-logo{width:min(170px,22vw);height:46px;display:flex;align-items:center;flex:0 0 auto;letter-spacing:0}
+.sp-header .sp-logo img{display:block;width:auto;max-width:100%;height:auto;max-height:42px;object-fit:contain}
+@media(max-width:650px){.sp-header .sp-logo{width:min(145px,42vw);height:42px}.sp-header .sp-logo img{max-height:38px}}
