@@ -449,3 +449,112 @@ body.soullit-red{background:var(--sp-bg);color:var(--sp-white);font-family:var(-
   .collection-meta{min-height:74px;padding:14px 15px 16px}
   .collection-footer{margin-top:54px}
 }
+
+
+/* Curated Graphic Design collections — five clearly separated project groups */
+.collection-jump{
+  display:flex;flex-wrap:wrap;gap:9px;
+  margin:32px 0 10px;
+  padding:15px 0 20px;
+  border-bottom:1px solid rgba(255,170,175,.18);
+}
+.collection-jump a{
+  display:inline-flex;align-items:center;
+  padding:9px 13px;
+  border:1px solid rgba(255,160,166,.24);
+  border-radius:30px;
+  color:#f3dedd;
+  background:rgba(255,255,255,.025);
+  font: .55rem var(--sp-mono);
+  letter-spacing:.035em;
+  transition:background .2s,border-color .2s,color .2s,transform .2s;
+}
+.collection-jump a:hover{
+  background:rgba(213,31,43,.14);
+  border-color:rgba(255,75,85,.75);
+  color:#fff;
+  transform:translateY(-2px);
+}
+.collection-categories{display:flex;flex-direction:column;gap:64px;margin-top:26px}
+.collection-category{scroll-margin-top:28px}
+.collection-category-heading{
+  display:flex;align-items:end;justify-content:space-between;gap:20px;
+  border-bottom:1px solid rgba(255,170,175,.2);
+  padding:0 0 17px;margin-bottom:24px;
+}
+.collection-category-intro small{
+  display:block;color:#ff626b;font: .53rem var(--sp-mono);
+  letter-spacing:.12em;margin-bottom:9px;
+}
+.collection-category-heading h2{
+  color:#f6f2ef;font-size:clamp(1.8rem,3.2vw,3rem);
+  line-height:1.08;letter-spacing:-.055em;font-weight:700;
+}
+.collection-category-count{
+  flex:0 0 auto;color:#c9b9b7;font: .52rem var(--sp-mono);
+  letter-spacing:.1em;padding-bottom:4px;
+}
+.collection-group-grid{
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
+  align-items:start;gap:23px;
+}
+.collection-group-grid .collection-card{
+  min-width:0;display:flex;flex-direction:column;
+  border:1px solid rgba(255,165,170,.16);
+  background:linear-gradient(145deg,#171112,#0e0b0c);
+}
+.collection-group-grid .collection-card-image{
+  display:block;width:100%;height:auto;aspect-ratio:4/5;
+  object-fit:cover;object-position:center;background:#151112;
+  cursor:zoom-in;transition:transform .5s cubic-bezier(.2,.7,.2,1);
+}
+.collection-group-grid .collection-card:hover .collection-card-image{transform:scale(1.018)}
+.collection-group-grid .collection-card-image.poster-artwork{
+  aspect-ratio:4/5;object-fit:contain;padding:9px;
+  background:radial-gradient(ellipse at 50% 38%,#241214,#0b0a0b 78%);
+}
+.collection-group-grid .collection-card-image.logo-artwork{
+  aspect-ratio:4/5;object-fit:contain;padding:22px;
+  background:linear-gradient(145deg,#f4f0e8,#e8e2d8);
+}
+.collection-group-grid .collection-meta{
+  min-height:91px;padding:15px 16px 17px;
+  border-top:1px solid rgba(255,255,255,.08);
+}
+.collection-group-grid .collection-meta small{
+  display:block;color:#ff626b;font: .51rem var(--sp-mono);
+  letter-spacing:.07em;line-height:1.55;
+}
+.collection-group-grid .collection-meta h3{
+  margin-top:7px;color:#f6f2ef;
+  font-size:1rem;font-weight:650;line-height:1.35;letter-spacing:-.025em;
+}
+.collection-group-grid .collection-card.reveal{
+  opacity:0;transform:translateY(22px);
+  transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1),border-color .25s,box-shadow .25s;
+}
+.collection-group-grid .collection-card.reveal.is-visible{opacity:1;transform:translateY(0)}
+.collection-group-grid .collection-card:hover{
+  border-color:rgba(255,75,85,.58);
+  box-shadow:0 17px 42px rgba(120,12,23,.17);
+}
+.collection-group-grid .collection-card.image-error .collection-card-image{
+  min-height:180px;object-fit:contain;background:#1a1112;
+}
+@media(max-width:1050px){
+  .collection-group-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+  .collection-categories{gap:54px}
+}
+@media(max-width:650px){
+  .collection-jump{gap:7px;padding:12px 0 17px;margin-top:24px}
+  .collection-jump a{font-size:.48rem;padding:8px 10px}
+  .collection-categories{gap:42px;margin-top:22px}
+  .collection-category-heading{align-items:flex-start}
+  .collection-category-heading h2{font-size:1.75rem}
+  .collection-category-count{font-size:.46rem;padding-top:8px}
+  .collection-group-grid{grid-template-columns:1fr;gap:17px}
+  .collection-group-grid .collection-card-image{aspect-ratio:4/5}
+  .collection-group-grid .collection-card-image.poster-artwork{aspect-ratio:4/5;padding:8px}
+  .collection-group-grid .collection-card-image.logo-artwork{aspect-ratio:4/5;padding:18px}
+  .collection-group-grid .collection-meta{min-height:76px;padding:13px 14px 15px}
+}
