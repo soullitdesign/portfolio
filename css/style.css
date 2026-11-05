@@ -833,3 +833,11 @@ body.soullit-red{
 .sp-header .sp-logo{width:min(170px,22vw);height:46px;display:flex;align-items:center;flex:0 0 auto;letter-spacing:0}
 .sp-header .sp-logo img{display:block;width:auto;max-width:100%;height:auto;max-height:42px;object-fit:contain}
 @media(max-width:650px){.sp-header .sp-logo{width:min(145px,42vw);height:42px}.sp-header .sp-logo img{max-height:38px}}
+
+
+/* Photography collection: use the full content width and keep all four projects on one row */
+main.collection-page{display:block;width:100%;max-width:1540px;margin-inline:auto}
+.collection-grid-photo .collection-category{width:100%}
+.collection-grid-photo .collection-group-grid{width:100%;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px}
+@media(max-width:1050px){.collection-grid-photo .collection-group-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}}
+@media(max-width:650px){.collection-grid-photo .collection-group-grid{grid-template-columns:1fr;gap:17px}}
