@@ -52,6 +52,18 @@
     document.body.style.overflow = 'hidden';
     closeButton?.focus();
   };
+  const previousButton = document.createElement('button');
+  previousButton.type = 'button';
+  previousButton.className = 'lightbox-nav lightbox-prev';
+  previousButton.setAttribute('aria-label', 'Previous image');
+  previousButton.innerHTML = '<span aria-hidden="true">‹</span>';
+  const nextButton = document.createElement('button');
+  nextButton.type = 'button';
+  nextButton.className = 'lightbox-nav lightbox-next';
+  nextButton.setAttribute('aria-label', 'Next image');
+  nextButton.innerHTML = '<span aria-hidden="true">›</span>';
+  if (lightbox) lightbox.append(previousButton, nextButton);
+
   const closePreview = () => {
     if (!lightbox) return;
     lightbox.classList.remove('open');
@@ -148,6 +160,8 @@
 
   grid.parentNode.insertBefore(jumpNav, grid);
   closeButton?.addEventListener('click', closePreview);
+  previousButton.addEventListener('click', () => previewNext(-1));
+  nextButton.addEventListener('click', () => previewNext(1));
   lightbox?.addEventListener('click', event => {
     if (event.target === lightbox) closePreview();
   });
