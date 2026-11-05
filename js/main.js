@@ -123,7 +123,7 @@
 
       context.beginPath();
       context.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
-      context.fillStyle = `rgba(190, 174, 255, ${particle.alpha})`;
+      context.fillStyle = `rgba(255, 82, 88, ${particle.alpha})`;
       context.fill();
     });
 
