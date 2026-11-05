@@ -294,3 +294,11 @@ footer .brand { color: var(--white); font-size: .85rem; }
   .hero::after { inset: 13% 0 14%; opacity: .32; }
   .hero-portrait { filter: drop-shadow(0 0 23px rgba(230,36,41,.2)); }
 }
+
+
+/* Keep the hero image hidden until the complete transparent artwork is decoded. */
+.hero-portrait { opacity: 0; transition: opacity .55s ease, filter .4s ease; }
+.hero-portrait.is-ready { opacity: 1; }
+@media (prefers-reduced-motion: reduce) {
+  .hero-portrait { transition: none; }
+}
