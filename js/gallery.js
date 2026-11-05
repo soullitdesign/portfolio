@@ -4,16 +4,16 @@
   const lightbox = document.querySelector('.lightbox');
   const lightboxImage = lightbox?.querySelector('img');
   const closeButton = lightbox?.querySelector('button');
-  const menuToggle = document.querySelector('.menu-toggle');
+  const menuToggle = document.querySelector(".sp-menu");
   const nav = document.querySelector('#site-nav');
   if (menuToggle && nav) {
     menuToggle.addEventListener('click', () => {
       const isOpen = menuToggle.getAttribute('aria-expanded') === 'true';
       menuToggle.setAttribute('aria-expanded', String(!isOpen));
-      nav.classList.toggle('open', !isOpen);
+      nav.classList.toggle("is-open", !isOpen);
     });
     nav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
-      menuToggle.setAttribute('aria-expanded', 'false'); nav.classList.remove('open');
+      menuToggle.setAttribute('aria-expanded', 'false'); nav.classList.remove("is-open");
     }));
   }
   if (!grid) return;
