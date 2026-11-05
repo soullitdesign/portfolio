@@ -888,3 +888,18 @@ main.collection-page{display:block;width:100%;max-width:1540px;margin-inline:aut
   .lightbox button.lightbox-next{right:12px;left:auto}
   .lightbox button[aria-label="Close preview"]{top:14px;right:14px}
 }
+
+
+/* Photography collection: larger portrait thumbnails to match the reference cards */
+.collection-grid-photo .collection-group-grid .collection-card-image{
+  width:100%;
+  aspect-ratio:4/5;
+  height:auto;
+  object-fit:cover;
+  padding:0;
+}
+@media(max-width:650px){
+  .collection-grid-photo .collection-group-grid .collection-card-image{
+    aspect-ratio:4/5;
+  }
+}
