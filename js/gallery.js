@@ -47,6 +47,7 @@
     lightboxImage.decoding = 'async';
     lightboxImage.style.display = 'block';
     if (lightboxCaption) lightboxCaption.textContent = [item.title, item.type].filter(Boolean).join('  /  ');
+    document.body.classList.add('gallery-preview-open');
     lightbox.classList.add('open');
     lightbox.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
@@ -67,6 +68,7 @@
   const closePreview = () => {
     if (!lightbox) return;
     lightbox.classList.remove('open');
+    document.body.classList.remove('gallery-preview-open');
     lightbox.setAttribute('aria-hidden', 'true');
     if (lightboxImage) {
       lightboxImage.src = '';
