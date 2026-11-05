@@ -390,3 +390,62 @@ body.soullit-red{background:var(--sp-bg);color:var(--sp-white);font-family:var(-
   .sp-category-copy{max-width:62%;padding-top:45px}
   .sp-card-art{right:0;top:24px;width:45%;transform:scale(.82);transform-origin:right top}
 }
+
+
+/* Gallery presentation — show the portfolio artwork, not cropped placeholders */
+.collection-page{max-width:1540px;padding-top:clamp(32px,5vw,72px);padding-bottom:64px}
+.collection-head{padding-bottom:54px}
+.collection-head h1{max-width:1050px}
+.collection-intro{max-width:680px}
+.collection-links a{transition:color .2s,border-color .2s}
+.collection-links a:hover{color:#ff6972;border-color:#ff6972}
+.collection-grid{
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:24px;
+  margin-top:48px;
+  align-items:start;
+}
+.collection-card{
+  display:flex;
+  flex-direction:column;
+  border-radius:3px;
+  background:linear-gradient(145deg,#171112,#0e0b0c);
+}
+.collection-card-image{
+  width:100%;
+  height:auto;
+  aspect-ratio:4/5;
+  object-fit:contain;
+  object-position:center;
+  background:radial-gradient(ellipse at 50% 38%,#241214,#0b0a0b 75%);
+  padding:10px;
+  cursor:zoom-in;
+}
+.collection-card:hover .collection-card-image{transform:scale(1.012)}
+.collection-meta{min-height:88px;padding:17px 18px 19px}
+.collection-meta small{font-size:.55rem;line-height:1.6}
+.collection-meta h2{font-size:1.06rem;line-height:1.35;margin-top:7px}
+.collection-grid-photo{
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:25px;
+}
+.collection-grid-photo .collection-card-image{
+  aspect-ratio:4/3;
+  object-fit:cover;
+  padding:0;
+  background:#100d0e;
+}
+.collection-grid-photo .collection-card{background:#151112}
+.collection-footer{margin-top:82px}
+@media(max-width:1050px){
+  .collection-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin-top:36px}
+}
+@media(max-width:650px){
+  .collection-page{padding:24px 5vw 36px}
+  .collection-head{padding:34px 0 36px}
+  .collection-grid,.collection-grid-photo{grid-template-columns:1fr;gap:18px;margin-top:25px}
+  .collection-card-image{aspect-ratio:4/5;max-height:620px;padding:8px}
+  .collection-grid-photo .collection-card-image{aspect-ratio:4/3;max-height:none;padding:0}
+  .collection-meta{min-height:74px;padding:14px 15px 16px}
+  .collection-footer{margin-top:54px}
+}
