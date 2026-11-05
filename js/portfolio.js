@@ -17,7 +17,7 @@
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   if (reduceMotion) return;
   const revealTargets = document.querySelectorAll(
-    ".sp-section, .sp-gallery-title, .sp-project, .sp-work-heading, .sp-tools"
+    ".sp-section, .sp-gallery-title, .sp-project, .sp-work-heading, .sp-tools, .sp-category-card"
   );
   if (!("IntersectionObserver" in window)) return;
   document.body.classList.add("js-enabled");

@@ -5,7 +5,7 @@
   const lightboxImage = lightbox?.querySelector('img');
   const closeButton = lightbox?.querySelector('button');
   const menuToggle = document.querySelector(".sp-menu");
-  const nav = document.querySelector('#site-nav');
+  const nav = document.querySelector('#sp-nav');
   if (menuToggle && nav) {
     menuToggle.addEventListener('click', () => {
       const isOpen = menuToggle.getAttribute('aria-expanded') === 'true';
