@@ -903,3 +903,12 @@ main.collection-page{display:block;width:100%;max-width:1540px;margin-inline:aut
     aspect-ratio:4/5;
   }
 }
+
+
+/* Hide the site header while an artwork is open in the fullscreen viewer */
+body.gallery-preview-open .sp-header{display:none!important}
+
+/* Photography: three large cards per desktop row, flowing responsively */
+.collection-grid-photo .collection-group-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+@media(max-width:1050px){.collection-grid-photo .collection-group-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}}
+@media(max-width:650px){.collection-grid-photo .collection-group-grid{grid-template-columns:1fr;gap:17px}}
