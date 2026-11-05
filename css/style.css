@@ -7,7 +7,7 @@ body.soullit-red{background:var(--sp-bg);color:var(--sp-white);font-family:var(-
 .soullit-red a{color:inherit;text-decoration:none}
 .soullit-red img{display:block;width:100%}
 .soullit-red ::selection{background:var(--sp-pink);color:#0b0a0b}
-.sp-header{height:78px;padding:0 6.5vw;display:flex;align-items:center;justify-content:space-between;gap:24px;background:rgba(18,5,27,.9);border-bottom:1px solid var(--sp-line);position:relative;z-index:30}
+.sp-header{height:78px;padding:0 6.5vw;display:flex;align-items:center;justify-content:space-between;gap:24px;background:rgba(18,5,27,.96);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--sp-line);position:sticky;top:0;z-index:1000}
 .sp-logo{font-size:1rem;font-weight:800;letter-spacing:.17em;white-space:nowrap}.sp-logo span{color:var(--sp-pink);font-size:.65em;vertical-align:top;margin-left:3px}
 .sp-location,.sp-section-kicker,.sp-hero-top,.sp-hero-bottom,.sp-side-vertical,.sp-tools>span,.sp-project>span,.sp-gallery-title>span,.sp-profile article small,.sp-footer{font-family:var(--sp-mono);letter-spacing:.1em}
 .sp-location{font-size:.57rem;color:#bda8ca}
