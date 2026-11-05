@@ -1,7 +1,7 @@
-/* Small, accessible navigation for the refreshed portfolio. */
+/* Soullit mobile navigation */
 (() => {
-  const button = document.querySelector(".clean-menu-toggle");
-  const nav = document.querySelector("#clean-nav");
+  const button = document.querySelector(".sp-menu");
+  const nav = document.querySelector("#sp-nav");
   if (!button || !nav) return;
   button.addEventListener("click", () => {
     const open = button.getAttribute("aria-expanded") === "true";
