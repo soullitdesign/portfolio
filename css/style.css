@@ -843,13 +843,20 @@ main.collection-page{display:block;width:100%;max-width:1540px;margin-inline:aut
 @media(max-width:650px){.collection-grid-photo .collection-group-grid{grid-template-columns:1fr;gap:17px}}
 
 
-/* Brand identity artwork: use a balanced square frame for mixed logo layouts */
+/* Brand identity artwork: fill the card image area edge-to-edge */
 .collection-group-grid .collection-card-image.logo-artwork{
+  display:block;
+  width:100%;
   aspect-ratio:1/1;
-  object-fit:contain;
-  padding:clamp(16px,2.2vw,28px);
-  background:linear-gradient(145deg,#f4f0e8,#e8e2d8);
+  height:auto;
+  object-fit:cover;
+  object-position:center;
+  padding:0;
+  background:#fff;
 }
 @media(max-width:650px){
-  .collection-group-grid .collection-card-image.logo-artwork{aspect-ratio:1/1;padding:18px}
+  .collection-group-grid .collection-card-image.logo-artwork{
+    aspect-ratio:1/1;
+    padding:0;
+  }
 }
