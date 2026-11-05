@@ -912,3 +912,8 @@ body.gallery-preview-open .sp-header{display:none!important}
 .collection-grid-photo .collection-group-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
 @media(max-width:1050px){.collection-grid-photo .collection-group-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}}
 @media(max-width:650px){.collection-grid-photo .collection-group-grid{grid-template-columns:1fr;gap:17px}}
+
+/* Subtle animated ambient particles shared by every portfolio page */
+#ambient-particles{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:.78}
+body>:not(#ambient-particles){position:relative;z-index:1}
+@media(prefers-reduced-motion:reduce){#ambient-particles{display:none}}
