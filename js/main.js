@@ -2,33 +2,21 @@
 (() => {
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  // Load the transparent hero artwork from small text chunks to keep the source asset reliable on GitHub.
+  // The hero artwork loads directly from the repository asset in index.html.
+  // Preserve visibility and report a useful error if the path is incorrect.
   const heroPortrait = document.querySelector(".hero-portrait");
   if (heroPortrait) {
-    const imageParts = [
-      "Images/Hero/spiderman-parts/part-01.txt",
-      "Images/Hero/spiderman-parts/part-02.txt",
-      "Images/Hero/spiderman-parts/part-03.txt",
-      "Images/Hero/spiderman-parts/part-04.txt",
-      "Images/Hero/spiderman-parts/part-05.txt",
-      "Images/Hero/spiderman-parts/part-06.txt"
-    ];
-    Promise.all(imageParts.map(async (path) => {
-      const response = await fetch(path, { cache: "force-cache" });
-      if (!response.ok) throw new Error(`Could not load ${path}`);
-      return response.text();
-    })).then((parts) => {
-      const source = "data:image/webp;base64," + parts.join("").trim();
-      const image = new Image();
-      image.onload = () => {
-        heroPortrait.src = source;
-        heroPortrait.classList.add("is-ready");
-      };
-      image.onerror = () => heroPortrait.classList.add("image-load-failed");
-      image.src = source;
-    }).catch((error) => {
-      console.warn("Hero artwork could not be loaded:", error);
-    });
+    heroPortrait.addEventListener("load", () => {
+      heroPortrait.style.opacity = "1";
+      heroPortrait.classList.add("is-ready");
+    }, { once: true });
+    heroPortrait.addEventListener("error", () => {
+      console.error("Spider-Man hero image failed:", heroPortrait.src);
+      heroPortrait.alt = "Spider-Man artwork could not be loaded";
+    }, { once: true });
+    if (heroPortrait.complete && heroPortrait.naturalWidth > 0) {
+      heroPortrait.classList.add("is-ready");
+    }
   }
 
   // Mobile navigation
