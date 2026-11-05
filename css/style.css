@@ -915,7 +915,8 @@ body.gallery-preview-open .sp-header{display:none!important}
 
 /* Subtle animated ambient particles shared by every portfolio page */
 #ambient-particles{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:.78}
-body>:not(#ambient-particles){position:relative;z-index:1}
+body>:not(#ambient-particles):not(.lightbox){position:relative;z-index:1}
+.lightbox{position:fixed!important;inset:0!important;z-index:9999!important;display:flex;align-items:center;justify-content:center}
 @media(prefers-reduced-motion:reduce){#ambient-particles{display:none}}
 
 
