@@ -1,51 +1,23 @@
-# SOULLIT DESIGN — Ajay's Portfolio
+# SOULLIT DESIGN — Ajay Portfolio
 
-A responsive, animated dark editorial portfolio for graphic design, photography/DOP and UI/UX work.
+Responsive cinematic editorial portfolio for graphic design, photography/DOP and UI/UX work.
 
-## Included
-- `index.html` — homepage with cinematic portrait hero, two floating 3D design objects, animated particles, about, services, work, experience, education and contact.
-- `design.html` — graphic design gallery with click-to-enlarge previews.
-- `photography.html` — photography gallery.
-- `ui-ux.html` — UI/UX gallery.
-- `css/style.css` — all styling, responsive layouts and CSS 3D objects.
-- `js/main.js` — scroll reveals, portrait tilt, particles, cursor glow and mobile navigation.
-- `js/gallery.js` — gallery rendering and lightbox.
-- `Images/` — optimized WebP portfolio images and sample hero portrait.
+## Structure
+- `index.html` — homepage, Spider-Man hero cutout, 3D design objects, profile, selected work, journey and contact.
+- `design.html` — graphic design gallery with real project images and click-to-enlarge preview.
+- `photography.html` — photography collection.
+- `ui-ux.html` — UI/UX collection.
+- `Images/Hero/` — transparent WebP hero visual.
+- `Images/Graphic design/` — optimised project artwork.
+- `Images/Photography/` — photography images.
+- `Images/UI ux designer/` — UI/UX preview image.
+- `Images/Ajay.webp` — profile photograph.
 
-## Replace the sample hero portrait
-The homepage currently uses `Images/hero-sample-portrait.png` as a temporary sample portrait.
-When you are ready, add your own cutout/transparent portrait to `Images/` and change this line in `index.html`:
+## Deploy to GitHub Pages
+1. Extract this ZIP.
+2. Copy the contents (not the outer folder) into the root of `soullitdesign/portfolio`.
+3. Commit and push to the branch configured in GitHub Pages (currently `main`).
+4. Wait for the Pages workflow/build to finish.
+5. Open `https://soullitdesign.github.io/portfolio/`.
 
-```html
-<img src="Images/hero-sample-portrait.png"
-     alt="Temporary sample portrait — replace with your own photograph"
-     class="hero-portrait">
-```
-
-Replace the `src` with your own image path and update the alt text.
-
-The About section currently uses `Images/Ajay.webp`. You can replace that image too if you want a different profile photograph.
-
-## Update work images
-The project files are stored in:
-- `Images/Graphic design/`
-- `Images/Photography/`
-- `Images/UI ux designer/`
-
-To add a project, copy its WebP/JPG/PNG file into the relevant folder and edit the `window.collectionItems` array near the bottom of its gallery page. The homepage preview images are set directly in `index.html`.
-
-## Publish on GitHub Pages
-1. Back up your current repository.
-2. Extract this ZIP.
-3. Upload **the contents of this folder** to the root of `soullitdesign/portfolio` (not the ZIP itself and not an extra nested folder).
-4. Commit the files to the branch configured in Settings → Pages.
-5. Wait for Actions → Pages build and deployment to complete.
-6. Open: https://soullitdesign.github.io/portfolio/
-
-All links and asset paths are relative, so the site works from the `/portfolio/` project path.
-
-## Notes
-- The site uses plain HTML, CSS and JavaScript. No npm install or build step is needed.
-- Google Fonts are loaded from Google Fonts; if unavailable, the site falls back to system sans-serif.
-- Motion respects `prefers-reduced-motion`.
-- Replace the sample hero portrait with your own image before treating the portfolio as final.
+All site assets use relative paths and the galleries load actual image files from the `Images` folders. No build step or npm install is required.

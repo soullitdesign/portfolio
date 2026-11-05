@@ -9,80 +9,169 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="css/tiles.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <canvas id="particles" aria-hidden="true"></canvas>
   <div class="cursor-glow" aria-hidden="true"></div>
+
   <header class="site-header">
     <a class="brand" href="index.html" aria-label="Ajay home">SOULLIT<span>.</span></a>
     <div class="header-meta"><span class="status-dot"></span> AVAILABLE FOR CREATIVE WORK</div>
-    <button class="menu-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu"><span></span><span></span></button>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+      <span></span><span></span>
+    </button>
     <nav id="site-nav" class="site-nav">
-      <a href="#about">About</a><a href="#services">Expertise</a><a href="#work">Selected work</a><a href="#experience">Journey</a><a class="nav-contact" href="#contact">Let's talk <span>↗</span></a>
+      <a href="#about">About</a>
+      <a href="#services">Expertise</a>
+      <a href="#work">Selected work</a>
+      <a href="#experience">Journey</a>
+      <a class="nav-contact" href="#contact">Let's talk <span>↗</span></a>
     </nav>
   </header>
+
   <main>
     <section class="hero" id="home">
       <div class="hero-grid"></div>
       <div class="hero-topline mono"><span>INDEPENDENT DESIGNER / VISUAL STORYTELLER</span><span>INDIA · 2026</span></div>
-      <div class="hero-title-wrap"><p class="hero-kicker reveal">DESIGN THAT MAKES AN IMPRESSION</p><h1 class="hero-title" aria-label="Portfolio"><span class="title-back">PORTFOLIO</span><span class="title-front">PORTFOLIO</span></h1></div>
+      <div class="hero-title-wrap">
+        <p class="hero-kicker reveal">DESIGN THAT MAKES AN IMPRESSION</p>
+        <h1 class="hero-title" aria-label="Portfolio">
+          <span class="title-back">PORTFOLIO</span>
+          <span class="title-front">PORTFOLIO</span>
+        </h1>
+      </div>
+
       <div class="hero-person" data-tilt>
         <div class="person-halo"></div>
-        <div class="hero-art-placeholder" aria-hidden="true"></div>
+        <img src="Images/Hero/spiderman.webp" alt="Spider-Man in a red and black suit, isolated on a transparent background" class="hero-portrait">
       </div>
-      <div class="hero-side-note mono"><span>GRAPHIC DESIGN</span><i></i><span>ART DIRECTION</span><i></i><span>VISUAL STORIES</span></div>
-      <div class="floating-object object-type" data-float aria-label="Adobe Photoshop 3D logo">
-        <div class="type-face photoshop-face"><img src="https://www.adobe.com/cc-shared/assets/img/product-icons/svg/photoshop-40.svg" alt="Adobe Photoshop logo"></div>
-        <span class="object-label mono">PHOTOSHOP / DESIGN</span>
+
+      <div class="hero-side-note mono">
+        <span>GRAPHIC DESIGN</span>
+        <i></i>
+        <span>ART DIRECTION</span>
+        <i></i>
+        <span>VISUAL STORIES</span>
       </div>
-      <div class="floating-object object-palette" data-float><div class="palette-top"><span></span><span></span><span></span><span></span></div><div class="palette-bottom"><b></b><b></b><b></b></div><span class="object-label mono">COLOUR / FORM</span></div>
-      <div class="hero-bottom"><p class="hero-intro">I’m Ajay — a graphic designer crafting thoughtful visuals, distinctive identities and digital experiences.</p><a class="round-link" href="#work" aria-label="Explore selected work">↓</a><span class="mono hero-index">SCROLL TO EXPLORE&nbsp; / &nbsp;01—05</span></div>
+
+      <div class="floating-object object-type" data-float>
+        <div class="type-face">Aa</div>
+        <span class="object-label mono">TYPE / 3D</span>
+      </div>
+      <div class="floating-object object-palette" data-float>
+        <div class="palette-top"><span></span><span></span><span></span><span></span></div>
+        <div class="palette-bottom"><b></b><b></b><b></b></div>
+        <span class="object-label mono">COLOUR / FORM</span>
+      </div>
+
+      <div class="hero-bottom">
+        <p class="hero-intro">I’m Ajay — a graphic designer crafting thoughtful visuals, distinctive identities and digital experiences.</p>
+        <a class="round-link" href="#work" aria-label="Explore selected work">↓</a>
+        <span class="mono hero-index">SCROLL TO EXPLORE&nbsp; / &nbsp;01—06</span>
+      </div>
       <div class="particle-note mono">CREATIVE SYSTEMS // VISUAL EXPERIMENTS</div>
     </section>
+
     <section class="section about-section" id="about">
-      <div class="section-heading reveal"><span class="eyebrow mono">01 / THE PERSON BEHIND THE PIXELS</span><h2>Good design is<br><em>felt</em> before it is understood.</h2></div>
+      <div class="section-heading reveal">
+        <span class="eyebrow mono">01 / THE PERSON BEHIND THE PIXELS</span>
+        <h2>Good design is<br><em>felt</em> before it is understood.</h2>
+      </div>
       <div class="about-layout">
-        <div class="about-photo reveal"><div class="about-avatar tile-image" data-tile="0" role="img" aria-label="Ajay profile photograph"></div><span class="photo-index mono">AJ / 2026</span></div>
+        <div class="about-photo reveal">
+          <img src="Images/Ajay.webp" alt="Ajay profile photograph">
+          <span class="photo-index mono">AJ / 2026</span>
+        </div>
         <div class="about-copy reveal">
           <p class="large-copy">I turn ideas into clear, engaging visual stories — from the first rough concept to the final polished frame.</p>
           <p>I’m a Graphic Designer and Director of Photography at Mount Carmel (Deemed to be University), Bengaluru. My practice spans graphic design, visual communication, photography, video production and digital experiences. I enjoy combining strong concepts with considered typography, composition and detail.</p>
-          <div class="skill-tags"><span>Photoshop</span><span>Illustrator</span><span>Figma</span><span>Canva</span><span>Premiere Pro</span><span>WordPress</span><span>Visual storytelling</span></div>
+          <div class="skill-tags">
+            <span>Photoshop</span><span>Illustrator</span><span>Figma</span><span>Canva</span>
+            <span>Premiere Pro</span><span>WordPress</span><span>Visual storytelling</span>
+          </div>
           <a class="text-link" href="#contact">Have a project in mind? Let’s connect <span>↗</span></a>
         </div>
       </div>
     </section>
+
     <section class="section services-section" id="services">
-      <div class="section-heading reveal"><span class="eyebrow mono">02 / WHAT I BRING TO THE TABLE</span><h2>Creative thinking.<br><em>Thoughtful execution.</em></h2></div>
+      <div class="section-heading reveal">
+        <span class="eyebrow mono">02 / WHAT I BRING TO THE TABLE</span>
+        <h2>Creative thinking.<br><em>Thoughtful execution.</em></h2>
+      </div>
       <div class="services-list">
-        <a class="service-row reveal" href="design.html"><span class="service-no mono">01</span><h3>Graphic design</h3><p>Visual identities, posters, campaigns and digital artwork.</p><span class="service-arrow" aria-hidden="true">↗</span></a>
-        <a class="service-row reveal" href="photography.html"><span class="service-no mono">02</span><h3>Photography &amp; DOP</h3><p>Frames with atmosphere, composition and a clear point of view.</p><span class="service-arrow" aria-hidden="true">↗</span></a>
-        <a class="service-row reveal" href="ui-ux.html"><span class="service-no mono">03</span><h3>UI / UX design</h3><p>Digital experiences that balance usability and visual character.</p><span class="service-arrow" aria-hidden="true">↗</span></a>
+        <article class="service-row reveal"><span class="service-no mono">01</span><h3>Graphic design</h3><p>Visual identities, posters, campaigns and digital artwork.</p><span class="service-arrow">↗</span></article>
+        <article class="service-row reveal"><span class="service-no mono">02</span><h3>Photography & DOP</h3><p>Frames with atmosphere, composition and a clear point of view.</p><span class="service-arrow">↗</span></article>
+        <article class="service-row reveal"><span class="service-no mono">03</span><h3>UI / UX design</h3><p>Digital experiences that balance usability and visual character.</p><span class="service-arrow">↗</span></article>
+        <article class="service-row reveal"><span class="service-no mono">04</span><h3>Video & motion</h3><p>Editing, visual rhythm and stories built to hold attention.</p><span class="service-arrow">↗</span></article>
       </div>
     </section>
+
     <section class="section work-section" id="work">
-      <div class="work-heading reveal"><div><span class="eyebrow mono">03 / SELECTED VISUALS</span><h2>Selected <em>work.</em></h2></div><p>A collection of visual experiments, design projects and moments captured through the lens.</p></div>
+      <div class="work-heading reveal">
+        <div><span class="eyebrow mono">03 / SELECTED VISUALS</span><h2>Selected <em>work.</em></h2></div>
+        <p>A collection of visual experiments, design projects and moments captured through the lens.</p>
+      </div>
       <div class="work-grid">
-        <a class="work-card work-large reveal" href="design.html"><div class="work-card-image tile-image" data-tile="6" role="img" aria-label="BloomCrest graphic design project"></div><span class="work-overlay"><small class="mono">01 / BRANDING & POSTER</small><strong>Graphic design</strong><i>↗</i></span></a>
-        <a class="work-card reveal" href="photography.html"><div class="work-card-image tile-image" data-tile="17" role="img" aria-label="Evening photography"></div><span class="work-overlay"><small class="mono">02 / PHOTOGRAPHY</small><strong>Photography</strong><i>↗</i></span></a>
-        <a class="work-card reveal" href="ui-ux.html"><div class="work-card-image tile-image" data-tile="14" role="img" aria-label="UI UX design project"></div><span class="work-overlay"><small class="mono">03 / DIGITAL PRODUCT</small><strong>UI / UX</strong><i>↗</i></span></a>
+        <a class="work-card work-large reveal" href="design.html">
+          <img src="Images/Graphic design/BloomCrest.webp" alt="BloomCrest graphic design project">
+          <span class="work-overlay"><small class="mono">01 / BRANDING & POSTER</small><strong>Graphic design</strong><i>↗</i></span>
+        </a>
+        <a class="work-card reveal" href="photography.html">
+          <img src="Images/Photography/Evening.webp" alt="Evening photography">
+          <span class="work-overlay"><small class="mono">02 / PHOTOGRAPHY</small><strong>Photography</strong><i>↗</i></span>
+        </a>
+        <a class="work-card reveal" href="ui-ux.html">
+          <img src="Images/UI ux designer/Ui ux design.webp" alt="UI UX design project">
+          <span class="work-overlay"><small class="mono">03 / DIGITAL PRODUCT</small><strong>UI / UX</strong><i>↗</i></span>
+        </a>
+        <a class="work-card reveal" href="design.html">
+          <img src="Images/Graphic design/Porsche-911.webp" alt="Porsche 911 automotive artwork">
+          <span class="work-overlay"><small class="mono">04 / DIGITAL ART</small><strong>Automotive visuals</strong><i>↗</i></span>
+        </a>
       </div>
-      <div class="work-more reveal"><span class="mono">EXPLORE THE THREE COLLECTIONS</span><div><a href="design.html">Graphic design ↗</a><a href="photography.html">Photography ↗</a><a href="ui-ux.html">UI / UX ↗</a></div></div>
+      <div class="work-more reveal">
+        <span class="mono">MORE PROJECTS / THREE COLLECTIONS</span>
+        <div><a href="design.html">Graphic design ↗</a><a href="photography.html">Photography ↗</a><a href="ui-ux.html">UI / UX ↗</a></div>
+      </div>
     </section>
+
     <section class="section journey-section" id="experience">
-      <div class="section-heading reveal"><span class="eyebrow mono">04 / THE JOURNEY SO FAR</span><h2>Building a practice<br>with <em>purpose.</em></h2></div>
+      <div class="section-heading reveal">
+        <span class="eyebrow mono">04 / THE JOURNEY SO FAR</span>
+        <h2>Building a practice<br>with <em>purpose.</em></h2>
+      </div>
       <div class="journey-grid">
-        <div class="journey-block reveal"><span class="eyebrow mono">EXPERIENCE</span><div class="timeline-item"><span class="timeline-date mono">NOV 2025 — PRESENT</span><h3>Graphic Designer & DOP</h3><p>Mount Carmel (Deemed to be University), Bengaluru</p></div><div class="timeline-item"><span class="timeline-date mono">PREVIOUS</span><h3>UI / UX Design Intern</h3><p>Cloudisian · inGO Electrics Pvt. Ltd.</p></div></div>
-        <div class="journey-block reveal"><span class="eyebrow mono">EDUCATION</span><div class="timeline-item"><span class="timeline-date mono">2025</span><h3>B.Sc. Computer Science & Psychology</h3><p>St. Paul's College, Bengaluru<br>Affiliated to Bangalore University</p></div><div class="timeline-item"><span class="timeline-date mono">CURRENT</span><h3>MCA — Cybersecurity & Forensics</h3><p>SRM Online</p></div></div>
+        <div class="journey-block reveal">
+          <span class="eyebrow mono">EXPERIENCE</span>
+          <div class="timeline-item"><span class="timeline-date mono">NOV 2025 — PRESENT</span><h3>Graphic Designer & DOP</h3><p>Mount Carmel (Deemed to be University), Bengaluru</p></div>
+          <div class="timeline-item"><span class="timeline-date mono">PREVIOUS</span><h3>UI / UX Design Intern</h3><p>Cloudisian · inGO Electrics Pvt. Ltd.</p></div>
+        </div>
+        <div class="journey-block reveal">
+          <span class="eyebrow mono">EDUCATION</span>
+          <div class="timeline-item"><span class="timeline-date mono">2025</span><h3>B.Sc. Computer Science & Psychology</h3><p>St. Paul's College, Bengaluru</p></div>
+          <div class="timeline-item"><span class="timeline-date mono">CURRENT</span><h3>MCA — Cybersecurity & Forensics</h3><p>SRM Online</p></div>
+        </div>
       </div>
     </section>
+
     <section class="section contact-section" id="contact">
-      <span class="eyebrow mono reveal">05 / HAVE SOMETHING IN MIND?</span><h2 class="contact-title reveal">Let’s make<br><em>something matter.</em></h2>
-      <a class="contact-email reveal" href="https://www.instagram.com/soullit.design/" target="_blank" rel="noreferrer">Let’s talk <span>↗</span></a>
-      <div class="contact-bottom"><p>Open to creative collaborations, design projects and new perspectives.</p><div class="social-links"><a href="https://www.instagram.com/soullit.design/" target="_blank" rel="noreferrer">Instagram ↗</a><a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn ↗</a><a href="https://github.com/soullitdesign" target="_blank" rel="noreferrer">GitHub ↗</a></div></div>
+      <span class="eyebrow mono reveal">05 / HAVE SOMETHING IN MIND?</span>
+      <h2 class="contact-title reveal">Let’s make<br><em>something matter.</em></h2>
+      <a class="contact-email reveal" href="mailto:hello@soullit.design">Let’s talk <span>↗</span></a>
+      <div class="contact-bottom">
+        <p>Open to creative collaborations, design projects and new perspectives.</p>
+        <div class="social-links">
+          <a href="https://www.instagram.com/soullit.design/" target="_blank" rel="noreferrer">Instagram ↗</a>
+          <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+          <a href="https://github.com/soullitdesign" target="_blank" rel="noreferrer">GitHub ↗</a>
+        </div>
+      </div>
       <footer><a class="brand" href="#home">SOULLIT<span>.</span></a><span class="mono">DESIGNED WITH INTENT · © 2026 AJAY</span><a href="#home">BACK TO TOP ↑</a></footer>
     </section>
   </main>
+
   <script src="js/main.js"></script>
 </body>
 </html>
