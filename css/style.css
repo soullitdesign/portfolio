@@ -587,6 +587,11 @@ body.soullit-red{
   background:rgba(9,8,9,.94);
   border-bottom:1px solid rgba(255,120,130,.16);
   backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
+  position:sticky;
+  top:0;
+  z-index:1000;
+  width:100%;
 }
 .sp-logo{
   display:inline-flex;
