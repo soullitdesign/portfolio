@@ -952,3 +952,8 @@ body{padding-top:76px}
 @media(max-width:650px){
   .collection-grid-photo .collection-group-grid{grid-template-columns:1fr;gap:17px}
 }
+
+/* Performance: defer off-screen gallery layout and painting until needed. */
+.collection-category{content-visibility:auto;contain-intrinsic-size:auto 900px}
+.collection-card-image{height:auto;max-width:100%}
+#ambient-particles{pointer-events:none}
