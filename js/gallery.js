@@ -12,23 +12,23 @@
     // Existing curated entries keep their titles, types, groups and display settings.
     if (folder) {
       try {
-        const response = await fetch('https://api.github.com/repos/soullitdesign/portfolio/git/trees/main?recursive=1', {
+        const response = await Promise.race([fetch('https://api.github.com/repos/soullitdesign/portfolio/git/trees/main?recursive=1', {
           headers: { Accept: 'application/vnd.github+json' },
           cache: 'no-store'
-        });
+        }), new Promise((_, reject) => setTimeout(() => reject(new Error('Image index request timed out')), 1800))]);
         if (!response.ok) throw new Error('Image index unavailable');
         const tree = await response.json();
-        const prefix = folder.replace(/\\/$/, '') + '/';
-        const extensions = /\\.(avif|gif|jpe?g|png|webp)$/i;
+        const prefix = folder.replace(/\/$/, '') + '/';
+        const extensions = /\.(avif|gif|jpe?g|png|webp)$/i;
         tree.tree.filter(entry => entry.type === 'blob' && entry.path.startsWith(prefix) && extensions.test(entry.path))
           .forEach(entry => {
             const imagePath = entry.path;
             if (known.has(imagePath.toLowerCase())) return;
             const relative = imagePath.slice(prefix.length);
             const parts = relative.split('/');
-            const filename = parts.pop().replace(/\\.[^.]+$/, '');
-            const title = filename.replace(/[_-]+/g, ' ').replace(/\\s+/g, ' ').trim()
-              .replace(/\\b\\w/g, letter => letter.toUpperCase()) || 'New Project';
+            const filename = parts.pop().replace(/\.[^.]+$/, '');
+            const title = filename.replace(/[_-]+/g, ' ').replace(/\s+/g, ' ').trim()
+              .replace(/\b\w/g, letter => letter.toUpperCase()) || 'New Project';
             const group = parts.length
               ? parts[0].replace(/[_-]+/g, ' ').replace(/\\b\\w/g, letter => letter.toUpperCase())
               : (folder.toLowerCase().includes('photography') ? 'Photography / DOP' : 'Newly Added Work');
