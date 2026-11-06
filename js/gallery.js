@@ -14,8 +14,8 @@
       try {
         const response = await Promise.race([fetch('https://api.github.com/repos/soullitdesign/portfolio/git/trees/main?recursive=1', {
           headers: { Accept: 'application/vnd.github+json' },
-          cache: 'no-store'
-        }), new Promise((_, reject) => setTimeout(() => reject(new Error('Image index request timed out')), 1800))]);
+          cache: 'force-cache'
+        }), new Promise((_, reject) => setTimeout(() => reject(new Error('Image index request timed out')), 700))]);
         if (!response.ok) throw new Error('Image index unavailable');
         const tree = await response.json();
         const prefix = folder.replace(/\/$/, '') + '/';
@@ -162,9 +162,9 @@
         if (item.fit === 'contain') image.classList.add('logo-artwork');
         image.src = item.image;
         image.alt = item.title || 'Portfolio artwork';
-        image.loading = currentIndex < 3 ? 'eager' : 'lazy';
+        image.loading = currentIndex < 2 ? 'eager' : 'lazy';
         image.decoding = 'async';
-        image.fetchPriority = currentIndex < 3 ? 'high' : 'auto';
+        image.fetchPriority = currentIndex < 2 ? 'high' : 'auto';
         image.addEventListener('error', () => {
           card.classList.add('image-error');
           image.alt = 'Image unavailable: ' + (item.title || 'Artwork');
