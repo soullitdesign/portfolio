@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#0b0a0b">
-<meta name="description" content="Brand identity projects by Ajay at Soullit Design.">
+<meta name="description" content="Selected brand identity and logo design projects by Ajay at Soullit Design.">
 <title>Brand Identity — Ajay | Soullit</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,6 +13,21 @@
 <link rel="icon" type="image/png" href="Images/Brand/Logo-SD.png?v=sd-tab-icon-20261106-2">
 <link rel="shortcut icon" type="image/png" href="Images/Brand/Logo-SD.png?v=sd-tab-icon-20261106-2">
 <link rel="apple-touch-icon" href="Images/Brand/Logo-SD.png?v=sd-tab-icon-20261106-2">
+<style>
+.brand-page{width:min(1440px,100%);margin:auto;padding:clamp(46px,7vw,100px) clamp(22px,7vw,100px) 90px}
+.brand-intro{max-width:900px;margin-bottom:clamp(38px,6vw,76px)}
+.brand-intro h1{font:700 clamp(3.3rem,8vw,7.5rem)/.94 "Space Grotesk",sans-serif;letter-spacing:-.075em;margin:18px 0 22px}
+.brand-intro h1 em{font-style:normal;color:#ff4b55}
+.brand-intro p{max-width:620px;color:#c5b6b3;line-height:1.8}
+.brand-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.brand-project{min-width:0;background:#151113;border:1px solid rgba(255,255,255,.13);padding:clamp(10px,1.5vw,18px);transition:border-color .25s,transform .25s}
+.brand-project:hover{border-color:#ff4b55;transform:translateY(-3px)}
+.brand-project img{display:block;width:100%;height:auto;max-height:75vh;object-fit:contain;background:#0d090d}
+.brand-project figcaption{padding:16px 4px 4px;display:flex;justify-content:space-between;gap:12px;align-items:baseline}
+.brand-project figcaption strong{font:600 1rem "Manrope",sans-serif;color:#f5eeee}
+.brand-project figcaption span{font: .55rem "DM Mono",monospace;letter-spacing:.1em;color:#c5b6b3;text-transform:uppercase;text-align:right}
+@media(max-width:700px){.brand-page{padding:45px 5vw 65px}.brand-grid{grid-template-columns:1fr;gap:18px}.brand-project img{max-height:none}.brand-project figcaption{flex-direction:column;gap:6px}.brand-project figcaption span{text-align:left}}
+</style>
 </head>
 <body class="soullit-red">
 <header class="sp-header">
@@ -20,22 +35,22 @@
  <span class="sp-location">INDEPENDENT DESIGNER</span>
  <a class="sp-nav-cta" href="index.html">Back to portfolio ↗</a>
 </header>
-<main class="sp-coming-soon">
- <span class="sp-section-kicker">SOULLIT / NEW CHAPTER</span>
- <p class="sp-script">Something new is on the way</p>
- <h1>More projects<br><em>in progress</em></h1>
- <p>A new collection is in progress. This space will bring together more selected work when it is ready</p>
- <figure class="sp-coming-feature">
-  <img src="Images/Graphic%20design/More%20Soon/VR%20Interiors%20Premium%20Brand%20Identity%20Presentation.png" alt="VR Interiors brand identity design presentation" loading="eager" decoding="async">
-  <figcaption>FEATURED WORK / VR INTERIORS — BRAND IDENTITY</figcaption>
- </figure>
- <a class="sp-email" href="index.html#work">Explore selected work <span>↗</span></a>
- <style>
-  .sp-coming-feature{width:min(100%,1120px);margin:clamp(34px,5vw,64px) 0 38px}
-  .sp-coming-feature img{display:block;width:100%;height:auto;max-height:76vh;object-fit:contain;object-position:center;border:1px solid rgba(255,255,255,.12);background:#151113;box-shadow:0 24px 80px rgba(0,0,0,.32)}
-  .sp-coming-feature figcaption{padding-top:12px;font:500 .58rem/1.6 "DM Mono",monospace;letter-spacing:.14em;color:#c5b6b3}
-  @media(max-width:600px){.sp-coming-feature{margin:30px 0}.sp-coming-feature img{max-height:none}}
- </style>
+<main class="brand-page">
+ <div class="brand-intro">
+  <span class="sp-section-kicker">SOULLIT / SELECTED WORK</span>
+  <h1>Brand <em>Identity</em></h1>
+  <p>Distinctive visual identities, thoughtful logos and considered brand systems — built to give every brand its own character.</p>
+ </div>
+ <section class="brand-grid" aria-label="Brand identity projects">
+  <figure class="brand-project">
+   <img src="Images/Graphic%20design/More%20Soon/BloomCrest%20Brand%20Identity%20Presentation.png" alt="BloomCrest brand identity presentation" loading="eager" decoding="async">
+   <figcaption><strong>BloomCrest</strong><span>Brand Identity / Logo Design</span></figcaption>
+  </figure>
+  <figure class="brand-project">
+   <img src="Images/Graphic%20design/More%20Soon/VR%20Interiors%20Premium%20Brand%20Identity%20Presentation.png" alt="VR Interiors premium brand identity presentation" loading="lazy" decoding="async">
+   <figcaption><strong>VR Interiors</strong><span>Interior Brand Identity</span></figcaption>
+  </figure>
+ </section>
 </main>
 <div class="sp-coming-footer"><footer class="sp-footer"><a class="sp-logo sp-footer-logo" href="index.html" aria-label="Soullit Design home"><img src="Images/Brand/Logo-SD.png" alt="Soullit Design logo"></a><div><a href="https://www.instagram.com/_.ajay.gowda._/" target="_blank" rel="noreferrer">INSTAGRAM ↗</a><a href="https://github.com/soullitdesign" target="_blank" rel="noreferrer">GITHUB ↗</a><a href="index.html#contact">CONTACT ↗</a></div><span>© 2026 AJAY / SELECTED WORKS</span></footer></div>
 <script src="js/ambient-particles.js?v=ambient-particles-20261105"></script>
