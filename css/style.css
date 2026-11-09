@@ -976,7 +976,7 @@ body{padding-top:76px}
   transition:transform .45s cubic-bezier(.2,.7,.2,1)}
 .sp-logo-badge{height:clamp(33px,3.4vw,45px);width:auto;aspect-ratio:640/434;
   display:grid;place-items:center;perspective:420px}
-.sp-logo-mark{display:block;height:100%;width:auto;overflow:visible;
+.sp-logo-mark{display:block;width:100%;height:100%;overflow:visible;
   filter:drop-shadow(0 8px 16px rgba(214,26,41,.28));
   transition:filter .4s ease}
 .sp-logo:hover .sp-logo-mark,.sp-logo:focus-visible .sp-logo-mark{
@@ -1024,11 +1024,11 @@ body{padding-top:76px}
   transform:rotateX(calc(var(--py,0) * -4deg)) rotateY(calc(var(--px,0) * 6.5deg));
   transition:transform .55s cubic-bezier(.2,.7,.2,1);
   text-shadow:
-    1px 1px 0 #95141c, 2px 2px 0 #8d131a, 3px 3px 0 #871118,
-    4px 4px 0 #801017, 5px 5px 0 #790f16, 6px 6px 0 #720e14,
-    7px 7px 0 #6b0d13, 8px 8px 0 #640c12, 9px 9px 0 #5d0b11,
-    10px 10px 0 #560a0f, 11px 11px 0 #4f090e, 12px 12px 0 #48080c,
-    14px 16px 6px rgba(28,4,8,.55), 0 34px 80px rgba(0,0,0,.55);
+    1px 1px 0 #b51a24, 2px 2px 0 #ad1822, 3px 3px 0 #a51620,
+    4px 4px 0 #9d141d, 5px 5px 0 #95121b, 6px 6px 0 #8c1019,
+    7px 7px 0 #830e17, 8px 8px 0 #7a0c14, 9px 9px 0 #710a12,
+    10px 10px 0 #680910, 11px 11px 0 #5f070e, 12px 12px 0 #56060b,
+    14px 16px 6px rgba(30,4,8,.5), 0 34px 80px rgba(0,0,0,.55);
 }
 .sp-star{text-shadow:0 0 26px #fff,0 0 55px var(--sp-violet),0 0 90px rgba(255,70,82,.7)}
 .sp-role-frame{
