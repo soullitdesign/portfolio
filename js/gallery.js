@@ -221,6 +221,9 @@
     } else {
       grid.querySelectorAll('.reveal').forEach(card => card.classList.add('is-visible'));
     }
+
+    // Let the 3D interaction layer attach to the freshly rendered cards.
+    document.dispatchEvent(new CustomEvent('soullit:gallery-ready'));
   };
 
   init();
