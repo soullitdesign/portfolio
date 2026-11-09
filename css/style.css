@@ -957,3 +957,256 @@ body{padding-top:76px}
 .collection-category{content-visibility:auto;contain-intrinsic-size:auto 900px}
 .collection-card-image{height:auto;max-width:100%}
 #ambient-particles{pointer-events:none}
+
+
+/* ==========================================================================
+   SOULLIT 3D SYSTEM — extruded logo, depth-aware cards, hero sculpture
+   (Pointer-driven transforms are applied by js/depth-3d.js. Every effect is
+   additive: with no JS or reduced motion the site keeps its static layout.)
+   ========================================================================== */
+
+/* --- Shared logo sprite --------------------------------------------------- */
+.sd-sprite{position:absolute;width:0;height:0;overflow:hidden;pointer-events:none}
+
+/* --- Logo lockup ---------------------------------------------------------- */
+.sp-header,.sp-footer{perspective:900px}
+.sp-header .sp-logo,.sp-footer .sp-logo,.sp-footer-logo{width:auto;max-width:none;height:auto}
+.sp-logo{display:inline-flex;align-items:center;gap:clamp(7px,.85vw,12px);flex:0 0 auto;
+  width:auto;height:auto;line-height:0;transform-style:preserve-3d;
+  transition:transform .45s cubic-bezier(.2,.7,.2,1)}
+.sp-logo-badge{height:clamp(33px,3.4vw,45px);width:auto;aspect-ratio:640/434;
+  display:grid;place-items:center;perspective:420px}
+.sp-logo-mark{display:block;height:100%;width:auto;overflow:visible;
+  filter:drop-shadow(0 8px 16px rgba(214,26,41,.28));
+  transition:filter .4s ease}
+.sp-logo:hover .sp-logo-mark,.sp-logo:focus-visible .sp-logo-mark{
+  filter:drop-shadow(0 12px 24px rgba(255,52,68,.45))}
+.sp-logo-type{display:flex;flex-direction:column;justify-content:center;gap:.34em;
+  line-height:1;white-space:nowrap;text-align:left}
+.sp-logo-type b{font-family:var(--sp-font);font-weight:700;font-size:clamp(.66rem,.92vw,.78rem);
+  letter-spacing:.3em;color:#fdf7f6;text-indent:.3em}
+.sp-logo-type i{font-style:normal;font-family:var(--sp-mono);font-size:clamp(.44rem,.58vw,.5rem);
+  letter-spacing:.44em;color:#ff6f79;text-indent:.44em}
+.sd-sheen{opacity:0;pointer-events:none;transform:translateX(-260px) skewX(-14deg)}
+.is-shining .sd-sheen{animation:sdSheen .95s cubic-bezier(.35,.05,.2,1)}
+@keyframes sdSheen{
+  0%{opacity:0;transform:translateX(-260px) skewX(-14deg)}
+  18%{opacity:.9}
+  70%{opacity:.55}
+  100%{opacity:0;transform:translateX(680px) skewX(-14deg)}
+}
+.sp-footer .sp-logo-badge{height:clamp(38px,4.2vw,54px)}
+.sp-footer .sp-logo-type b{font-size:clamp(.7rem,1.05vw,.86rem)}
+.sp-footer .sp-logo-type i{font-size:clamp(.46rem,.64vw,.54rem)}
+@media(max-width:900px){
+  .sp-header .sp-logo-badge{height:38px}
+  .sp-footer .sp-logo-badge{height:44px}
+}
+@media(max-width:560px){
+  .sp-logo-type{display:none}
+  .sp-header .sp-logo-badge{height:36px}
+}
+
+/* --- Hero: 3D sculpture canvas + pointer parallax ------------------------ */
+.sp-hero-fx{position:absolute;inset:0;z-index:0;width:100%;height:100%;
+  pointer-events:none;opacity:.95;
+  -webkit-mask-image:radial-gradient(ellipse 62% 68% at 50% 46%,#000 38%,rgba(0,0,0,.55) 68%,transparent 96%);
+  mask-image:radial-gradient(ellipse 62% 68% at 50% 46%,#000 38%,rgba(0,0,0,.55) 68%,transparent 96%)}
+.sp-hero-top,.sp-hero-bottom,.sp-hero-title,.sp-side-vertical{position:relative;z-index:2}
+.sp-hero-top,.sp-hero-bottom{translate:calc(var(--px,0) * 6px) calc(var(--py,0) * 5px)}
+.sp-hero-grid{translate:calc(var(--px,0) * -12px) calc(var(--py,0) * -9px)}
+.sp-orb-one{translate:calc(var(--px,0) * 26px) calc(var(--py,0) * 20px)}
+.sp-orb-two{translate:calc(var(--px,0) * -20px) calc(var(--py,0) * -14px)}
+.sp-hero-title{perspective:1100px;perspective-origin:50% 42%;animation:spHeroIn3D .95s cubic-bezier(.2,.7,.2,1) both}
+@keyframes spHeroIn3D{from{opacity:0;transform:translateY(26px) scale(.988)}to{opacity:1;transform:none}}
+.sp-portfolio-word{
+  transform-style:preserve-3d;
+  transform:rotateX(calc(var(--py,0) * -4deg)) rotateY(calc(var(--px,0) * 6.5deg));
+  transition:transform .55s cubic-bezier(.2,.7,.2,1);
+  text-shadow:
+    1px 1px 0 #95141c, 2px 2px 0 #8d131a, 3px 3px 0 #871118,
+    4px 4px 0 #801017, 5px 5px 0 #790f16, 6px 6px 0 #720e14,
+    7px 7px 0 #6b0d13, 8px 8px 0 #640c12, 9px 9px 0 #5d0b11,
+    10px 10px 0 #560a0f, 11px 11px 0 #4f090e, 12px 12px 0 #48080c,
+    14px 16px 6px rgba(28,4,8,.55), 0 34px 80px rgba(0,0,0,.55);
+}
+.sp-star{text-shadow:0 0 26px #fff,0 0 55px var(--sp-violet),0 0 90px rgba(255,70,82,.7)}
+.sp-role-frame{
+  transform:translateZ(34px) rotateX(calc(var(--py,0) * -2deg)) rotateY(calc(var(--px,0) * 2.5deg));
+  transition:transform .6s cubic-bezier(.2,.7,.2,1);
+  background:linear-gradient(180deg,rgba(70,11,17,.5),rgba(20,6,9,.28));
+  backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);
+  box-shadow:0 0 34px rgba(239,57,70,.2),0 22px 50px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.18);
+}
+.sp-hero-title>p{transform:translateZ(22px);transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+@media(max-width:650px){
+  .sp-hero-fx{opacity:.72}
+  .sp-portfolio-word{text-shadow:
+    1px 1px 0 #8b131a,2px 2px 0 #831118,3px 3px 0 #7b1016,
+    4px 4px 0 #730f14,5px 5px 0 #6b0e12,6px 6px 0 #630d10,
+    7px 7px 0 #5b0b0e,9px 11px 5px rgba(28,4,8,.5)}
+}
+
+/* --- Depth-aware cards --------------------------------------------------- */
+.sp-project-gateway,.sp-intro-grid,.sp-contents,.collection-grid,.collection-group-grid,
+.sp-gallery,.sp-profile-grid{perspective:1500px}
+.sp-category-card{
+  transform-style:preserve-3d;
+  background-image:
+    radial-gradient(340px circle at calc(50% + var(--mx,0) * 44%) calc(48% + var(--my,0) * 44%),rgba(255,92,104,.17),transparent 66%),
+    linear-gradient(145deg,#201315 0%,#120d0f 60%,#260e12 100%);
+}
+.sp-category-card.is-tilting{transition:transform .1s linear,box-shadow .35s,border-color .35s;will-change:transform}
+.sp-category-card .sp-category-copy{translate:calc(var(--mx,0) * 5px) calc(var(--my,0) * 4px);
+  transition:translate .5s cubic-bezier(.2,.7,.2,1)}
+.sp-category-card.is-tilting .sp-category-copy{transition:translate .12s linear}
+.sp-card-art{translate:calc(var(--mx,0) * -16px) calc(var(--my,0) * -12px);
+  transition:translate .5s cubic-bezier(.2,.7,.2,1)}
+.sp-category-card.is-tilting .sp-card-art{transition:translate .12s linear}
+.sp-card-art *{transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+
+/* Real 3D cube inside the Brand Identity card */
+.sp-cube{position:absolute;right:43px;top:30px;width:64px;height:64px;
+  transform-style:preserve-3d;transform:rotateX(-24deg) rotateY(-28deg);
+  animation:spCubeSpin 22s linear infinite;pointer-events:none}
+.sp-cube i{position:absolute;inset:0;display:block;border:1px solid rgba(255,176,182,.8);
+  background:linear-gradient(145deg,rgba(148,32,44,.92),rgba(34,11,15,.96));
+  box-shadow:inset 0 0 22px rgba(255,90,100,.22)}
+.sp-cube i:nth-child(1){transform:translateZ(32px);background:linear-gradient(150deg,rgba(190,48,60,.95),rgba(58,14,20,.96))}
+.sp-cube i:nth-child(2){transform:rotateY(180deg) translateZ(32px);opacity:.62}
+.sp-cube i:nth-child(3){transform:rotateY(90deg) translateZ(32px);opacity:.78}
+.sp-cube i:nth-child(4){transform:rotateY(-90deg) translateZ(32px);opacity:.7}
+.sp-cube i:nth-child(5){transform:rotateX(90deg) translateZ(32px);
+  background:linear-gradient(150deg,rgba(255,148,155,.92),rgba(150,36,46,.9))}
+.sp-cube i:nth-child(6){transform:rotateX(-90deg) translateZ(32px);opacity:.5}
+.sp-cube:after{content:"";position:absolute;left:50%;top:50%;width:118px;height:118px;
+  margin:-59px 0 0 -59px;border-radius:50%;
+  background:radial-gradient(circle,rgba(255,64,78,.4),transparent 68%);
+  transform:translateZ(-46px);filter:blur(6px)}
+@keyframes spCubeSpin{
+  from{transform:rotateX(-24deg) rotateY(-28deg)}
+  to{transform:rotateX(-24deg) rotateY(332deg)}
+}
+.sp-category-card:hover .sp-cube{animation-duration:6s}
+
+/* Portrait, index and gallery depth */
+.sp-portrait-wrap{transform-style:preserve-3d;transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+.sp-portrait-wrap.is-tilting{transition:transform .1s linear;will-change:transform}
+.sp-portrait-wrap .sp-portrait-ring{translate:calc(var(--mx,0) * 18px) calc(var(--my,0) * 15px);
+  transition:translate .55s cubic-bezier(.2,.7,.2,1)}
+.sp-portrait-wrap .sp-portrait-label{translate:calc(var(--mx,0) * -20px) calc(var(--my,0) * -13px);
+  transition:translate .55s cubic-bezier(.2,.7,.2,1)}
+.sp-portrait-wrap .sp-portrait-index{translate:calc(var(--mx,0) * 14px) calc(var(--my,0) * -9px);
+  transition:translate .55s cubic-bezier(.2,.7,.2,1)}
+.sp-portrait-wrap.is-tilting .sp-portrait-ring,
+.sp-portrait-wrap.is-tilting .sp-portrait-label,
+.sp-portrait-wrap.is-tilting .sp-portrait-index{transition:translate .12s linear}
+.sp-portrait-wrap img{box-shadow:0 30px 70px rgba(0,0,0,.5),0 0 45px rgba(213,31,43,.3)}
+.sp-contents-grid{transform-style:preserve-3d;transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+.sp-contents-grid.is-tilting{transition:transform .1s linear;will-change:transform}
+.collection-card{transform-style:preserve-3d}
+.collection-card.is-tilting{will-change:transform;transition:transform .1s linear,border-color .25s,box-shadow .25s;
+  box-shadow:0 34px 70px rgba(0,0,0,.5),0 0 0 1px rgba(255,90,100,.35)}
+.collection-card .collection-card-image{transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+.collection-card.is-tilting .collection-card-image{transform:scale(1.045)}
+
+/* Lightbox artwork gets the same depth language */
+.lightbox img{transition:transform .45s cubic-bezier(.2,.7,.2,1)}
+.lightbox img:hover{transform:perspective(1400px) rotateY(-1.4deg) rotateX(.9deg) scale(1.008)}
+
+@media(prefers-reduced-motion:reduce){
+  .sp-cube{animation:none}
+  .sd-sheen{display:none}
+  .sp-portfolio-word,.sp-role-frame,.sp-hero-top,.sp-hero-bottom,.sp-hero-grid,
+  .sp-orb-one,.sp-orb-two,.sp-card-art,.sp-category-copy,.sp-hero-title>p,
+  .sp-portrait-ring,.sp-portrait-label,.sp-portrait-index{transform:none!important;translate:none!important}
+  .sp-hero-title{animation:none!important}
+}
+
+
+/* --- Brand identity page: large logo showcase ---------------------------- */
+.brand-mark-showcase{
+  display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);
+  gap:clamp(28px,5vw,72px);align-items:center;
+  margin:0 0 clamp(48px,7vw,86px);padding:clamp(24px,3.4vw,44px);
+  border:1px solid rgba(255,120,128,.22);border-radius:4px;
+  background:
+    radial-gradient(120% 90% at 18% 0%,rgba(140,20,32,.32),transparent 62%),
+    linear-gradient(150deg,#170f11,#0c0a0b 70%);
+  box-shadow:0 30px 80px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.06);
+  overflow:hidden;isolation:isolate;perspective:1600px;
+}
+.brand-mark-stage{
+  position:relative;display:grid;place-items:center;
+  min-height:clamp(230px,30vw,380px);padding:clamp(14px,2vw,30px);
+  transform-style:preserve-3d;transition:transform .5s cubic-bezier(.2,.7,.2,1);
+}
+.brand-mark-stage.is-tilting{transition:transform .1s linear;will-change:transform}
+.brand-mark-glow{
+  position:absolute;inset:6% 12%;z-index:0;border-radius:50%;
+  background:radial-gradient(circle,rgba(255,52,68,.42),rgba(255,52,68,.12) 52%,transparent 72%);
+  filter:blur(18px);animation:brandMarkGlow 7s ease-in-out infinite;
+}
+.brand-mark-grid{
+  position:absolute;inset:0;z-index:0;opacity:.16;border-radius:4px;
+  background-image:linear-gradient(rgba(255,190,196,.4) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,190,196,.4) 1px,transparent 1px);
+  background-size:34px 34px;
+  mask-image:radial-gradient(circle at 50% 50%,#000 20%,transparent 78%);
+  -webkit-mask-image:radial-gradient(circle at 50% 50%,#000 20%,transparent 78%);
+}
+.brand-mark-art{
+  position:relative;z-index:1;display:block;
+  width:min(100%,clamp(240px,30vw,420px));height:auto;overflow:visible;
+  filter:drop-shadow(0 26px 46px rgba(120,10,20,.55)) drop-shadow(0 0 30px rgba(255,60,75,.25));
+  transform:rotateX(6deg) rotateY(-10deg);
+  animation:brandMarkFloat 9s ease-in-out infinite;
+}
+.brand-mark-badge{
+  position:absolute;z-index:2;left:50%;bottom:0;transform:translateX(-50%);
+  border:1px solid rgba(255,170,176,.35);border-radius:2px;
+  padding:7px 10px;background:rgba(20,8,11,.78);
+  font: .46rem var(--sp-mono);letter-spacing:.16em;color:#f0cfd1;white-space:nowrap;
+}
+.brand-mark-copy .sp-section-kicker{padding-bottom:12px;margin-bottom:18px}
+.brand-mark-copy h2{
+  font:700 clamp(2rem,3.6vw,3.3rem)/1.02 var(--sp-font);letter-spacing:-.06em;color:#fbf4f3;
+}
+.brand-mark-copy h2 em{font-style:normal;color:#ff4b55}
+.brand-mark-lead{max-width:46ch;margin:18px 0 26px;color:#c9b9b7;line-height:1.8;font-size:.9rem}
+.brand-mark-specs{display:grid;gap:0;margin:0 0 24px;border-top:1px solid rgba(255,190,194,.16)}
+.brand-mark-specs div{display:flex;justify-content:space-between;gap:18px;align-items:baseline;
+  padding:11px 0;border-bottom:1px solid rgba(255,190,194,.16)}
+.brand-mark-specs dt{font: .54rem var(--sp-mono);letter-spacing:.13em;color:#ff7b84;text-transform:uppercase}
+.brand-mark-specs dd{margin:0;font-size:.82rem;color:#e7dcdb;text-align:right}
+.brand-palette{display:flex;gap:10px;flex-wrap:wrap}
+.brand-palette span{
+  display:flex;flex-direction:column;gap:6px;min-width:92px;
+  padding:10px 12px 11px;border:1px solid rgba(255,255,255,.12);border-radius:3px;
+  background:linear-gradient(160deg,rgba(255,255,255,.06),rgba(0,0,0,.25));
+  box-shadow:inset 0 0 0 4px var(--c,transparent),inset 0 0 0 5px rgba(255,255,255,.14);
+  transition:transform .3s cubic-bezier(.2,.7,.2,1),border-color .3s;
+}
+.brand-palette span:hover{transform:translateY(-3px) rotate(-1.4deg);border-color:rgba(255,120,128,.5)}
+.brand-palette b{font:600 .58rem var(--sp-mono);letter-spacing:.06em;color:#f6edec}
+.brand-palette i{font-style:normal;font-size:.5rem;letter-spacing:.1em;color:#b8a5a4;text-transform:uppercase}
+@keyframes brandMarkFloat{
+  0%,100%{transform:rotateX(6deg) rotateY(-10deg) translateY(0)}
+  50%{transform:rotateX(-3deg) rotateY(9deg) translateY(-10px)}
+}
+@keyframes brandMarkGlow{0%,100%{opacity:.72;transform:scale(.96)}50%{opacity:1;transform:scale(1.05)}}
+.brand-mark-stage:hover .brand-mark-art{animation-play-state:paused}
+@media(max-width:900px){
+  .brand-mark-showcase{grid-template-columns:1fr;gap:26px}
+  .brand-mark-art{width:min(100%,320px)}
+}
+@media(max-width:700px){
+  .brand-mark-showcase{padding:18px 16px 22px}
+  .brand-mark-badge{left:auto;right:6px;bottom:2px;transform:none;font-size:.42rem}
+  .brand-mark-copy h2{font-size:clamp(1.8rem,7vw,2.4rem)}
+  .brand-mark-lead{font-size:.84rem}
+  .brand-palette span{flex:1 1 30%;min-width:0}
+}
+@media(prefers-reduced-motion:reduce){
+  .brand-mark-art,.brand-mark-glow{animation:none}
+}

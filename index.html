@@ -9,14 +9,45 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=performance-20261106">
-<link rel="icon" type="image/png" href="Images/Brand/Logo-SD.png?v=sd-tab-icon-20261106-2">
-<link rel="shortcut icon" type="image/png" href="Images/Brand/Logo-SD.png?v=sd-tab-icon-20261106-2">
-<link rel="apple-touch-icon" href="Images/Brand/Logo-SD.png?v=sd-tab-icon-20261106-2">
+<link rel="stylesheet" href="css/style.css?v=3d-20261109">
+<link rel="icon" type="image/svg+xml" href="Images/Brand/logo-mark.svg?v=3d-20261109">
+<link rel="icon" type="image/png" sizes="512x512" href="Images/Brand/logo-mark-512.png?v=3d-20261109">
+<link rel="apple-touch-icon" href="Images/Brand/apple-touch-icon.png?v=3d-20261109">
 </head>
 <body class="soullit-red">
+<svg class="sd-sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="sdFace" x1="16%" y1="0%" x2="82%" y2="100%">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset=".44" stop-color="#fff4f4"/>
+      <stop offset=".78" stop-color="#ffdadd"/>
+      <stop offset="1" stop-color="#ffb2bb"/>
+    </linearGradient>
+    <linearGradient id="sdSheen" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset=".42" stop-color="#ffffff" stop-opacity=".92"/>
+      <stop offset=".58" stop-color="#ffdfe3" stop-opacity=".92"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+    <clipPath id="sdClip"><path d="M143.5 17L30.5 128L208 297.5L166 297.5L87.5 220L17 289.5L120 392L264.5 392L357 298.5L167 113L230 112.5L294 179L365 107L279 17ZM300 17L387.5 107L316 178L316 233L379.5 297.5L285.5 392L523 392L622.5 298.5L622.5 139.5L504.5 17ZM438 114.5L514.5 192.5L514.5 241L438 310.5Z" clip-rule="evenodd"/></clipPath>
+    <g id="sdShape"><path d="M143.5 17L30.5 128L208 297.5L166 297.5L87.5 220L17 289.5L120 392L264.5 392L357 298.5L167 113L230 112.5L294 179L365 107L279 17Z"/><path d="M300 17L387.5 107L316 178L316 233L379.5 297.5L285.5 392L523 392L622.5 298.5L622.5 139.5L504.5 17ZM438 114.5L514.5 192.5L514.5 241L438 310.5Z" fill-rule="evenodd"/></g>
+    <g id="sdDepth">
+      <use href="#sdShape" y="30.00" fill="#440d12"/>
+      <use href="#sdShape" y="26.25" fill="#4e0e14"/>
+      <use href="#sdShape" y="22.50" fill="#581016"/>
+      <use href="#sdShape" y="18.75" fill="#621118"/>
+      <use href="#sdShape" y="15.00" fill="#6d131a"/>
+      <use href="#sdShape" y="11.25" fill="#77151c"/>
+      <use href="#sdShape" y="7.50" fill="#81161e"/>
+      <use href="#sdShape" y="3.75" fill="#8b1820"/>
+    </g>
+  </defs>
+</svg>
 <header class="sp-header">
-  <a class="sp-logo" href="#top" aria-label="Soullit Design home"><img src="Images/Brand/Logo-SD.png" alt="Soullit Design logo"></a>
+  <a class="sp-logo" href="#top" aria-label="Soullit Design — home">
+  <span class="sp-logo-badge"><svg class="sp-logo-mark" viewBox="0 0 640 434" aria-hidden="true" focusable="false"><use href="#sdDepth"/><use href="#sdShape" fill="url(#sdFace)"/><g clip-path="url(#sdClip)" aria-hidden="true"><rect class="sd-sheen" x="0" y="-24" width="132" height="470" fill="url(#sdSheen)"/></g></svg></span>
+  <span class="sp-logo-type" aria-hidden="true"><b>SOULLIT</b><i>DESIGN</i></span>
+</a>
   <span class="sp-location">INDEPENDENT DESIGNER</span>
   <button class="sp-menu" aria-expanded="false" aria-controls="sp-nav" aria-label="Open menu"><i></i><i></i></button>
   <nav id="sp-nav" class="sp-nav">
@@ -110,7 +141,7 @@
           <span class="sp-category-link">EXPLORE BRAND IDENTITY <b>↗</b></span>
         </div>
         <div class="sp-card-art sp-card-art-next" aria-hidden="true">
-          <span class="sp-next-ring sp-next-ring-one"></span><span class="sp-next-ring sp-next-ring-two"></span><span class="sp-next-cube"></span><span class="sp-next-glow"></span>
+          <span class="sp-next-ring sp-next-ring-one"></span><span class="sp-next-ring sp-next-ring-two"></span><span class="sp-cube" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></span><span class="sp-next-glow"></span>
         </div>
       </a>
     </div>
@@ -135,9 +166,14 @@
     <div class="sp-section-kicker"><span>05 / CONTACT</span><span>OPEN TO SELECT PROJECTS & COLLABORATIONS</span></div>
     <p class="sp-script">Have an idea?</p><h2>Let's make<br><em>something good</em></h2>
     <a class="sp-email" href="mailto:hello@soullit.design">hello@soullit.design <span>↗</span></a>
-    <footer class="sp-footer"><a class="sp-logo sp-footer-logo" href="#top" aria-label="Soullit Design home"><img src="Images/Brand/Logo-SD.png" alt="Soullit Design logo"></a><div><a href="https://www.instagram.com/_.ajay.gowda._/" target="_blank" rel="noreferrer">INSTAGRAM ↗</a><a href="https://github.com/soullitdesign" target="_blank" rel="noreferrer">GITHUB ↗</a><a href="https://www.behance.net/" target="_blank" rel="noreferrer">BEHANCE ↗</a></div><span>© 2026 AJAY / SELECTED WORKS</span></footer>
+    <footer class="sp-footer"><a class="sp-logo sp-footer-logo" href="#top" aria-label="Soullit Design — home">
+  <span class="sp-logo-badge"><svg class="sp-logo-mark" viewBox="0 0 640 434" aria-hidden="true" focusable="false"><use href="#sdDepth"/><use href="#sdShape" fill="url(#sdFace)"/><g clip-path="url(#sdClip)" aria-hidden="true"><rect class="sd-sheen" x="0" y="-24" width="132" height="470" fill="url(#sdSheen)"/></g></svg></span>
+  <span class="sp-logo-type" aria-hidden="true"><b>SOULLIT</b><i>DESIGN</i></span>
+</a><div><a href="https://www.instagram.com/_.ajay.gowda._/" target="_blank" rel="noreferrer">INSTAGRAM ↗</a><a href="https://github.com/soullitdesign" target="_blank" rel="noreferrer">GITHUB ↗</a><a href="https://www.behance.net/" target="_blank" rel="noreferrer">BEHANCE ↗</a></div><span>© 2026 AJAY / SELECTED WORKS</span></footer>
   </section>
 </main>
 <script src="js/portfolio.js?v=category-cards-20261105"></script>
 <script src="js/ambient-particles.js?v=ambient-particles-20261105"></script>
+<script src="js/hero-3d.js?v=3d-20261109"></script>
+<script src="js/depth-3d.js?v=3d-20261109"></script>
 </body></html>
