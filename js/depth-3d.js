@@ -65,6 +65,7 @@
     { selector: ".sp-contents-grid", max: 2.6, lift: 0 },
     { selector: ".sp-logo", max: 14, lift: 0 },
     { selector: ".collection-card", max: 5.5, lift: -4 },
+    { selector: ".sp-piece", max: 4.5, lift: 0 },
     { selector: ".brand-mark-stage", max: 12, lift: 0 }
   ];
 

@@ -30,3 +30,11 @@ All site assets use relative paths and the galleries load actual image files fro
 - The logo lives once per page as an inline SVG sprite (`#sdShape`, `#sdDepth`, `#sdFace`, `#sdSheen`) and is reused through `<use>` in the header and footer, so the mark stays crisp and the type lockup uses the live site fonts.
 - Depth reveals: section headings swing up out of perspective, profile entries stagger in, and the logo flips into place in 3D on load.
 - Brand watermarks: a faint, drifting 3D monogram sits behind the contact headline and in the collection headers on the gallery pages.
+
+## Studio upgrade (2026 — professional pass)
+- `index.html` → new `#featured-work` wall: six real project pieces (BloomCrest, Diwali, Porsche 911, School of Design, VR Interiors, Mysore Palace) with pointer-tilt lift and a keyboard-navigable preview lightbox.
+- `js/featured-work.js` — progressive-enhancement preview for the featured wall: click opens the piece full-screen, `←`/`→` step through the set, `Esc` closes, modifier/middle-click still opens the raw image, and the plain link works with JavaScript off.
+- `index.html` → new `#services` section (brand identity, campaign design, editorial & digital, photography & direction) plus a selected-clients strip, and an availability line in the contact block.
+- `js/portfolio.js` → thin reading-progress line pinned under the header (passive scroll listener, rAF throttled, hidden in print/reduced-motion contexts).
+- Every page now has one `h1` (the homepage one is visually hidden so the designed `PORTFOLIO` wordmark stays untouched), canonical URLs, Open Graph/Twitter cards and `Person` JSON-LD.
+- Documented section order: 01 Introduction · 02 Index · 03 Selected Projects (+ featured wall) · 04 Services · 05 Experience · 06 Contact.
