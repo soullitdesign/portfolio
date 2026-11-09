@@ -28,3 +28,5 @@ All site assets use relative paths and the galleries load actual image files fro
 - `css/style.css` → the `SOULLIT 3D SYSTEM` block: extruded logo lockup, 3D `PORTFOLIO` headline, card depth and spotlight, real rotating 3D cube, brand-page showcase.
 - `Images/Brand/logo-mark.svg` — re-drawn vector SD monogram with a 3D extrusion (favicon), with `logo-mark-512.png` and `apple-touch-icon.png` raster copies. `Logo-SD.png` is kept for legacy use.
 - The logo lives once per page as an inline SVG sprite (`#sdShape`, `#sdDepth`, `#sdFace`, `#sdSheen`) and is reused through `<use>` in the header and footer, so the mark stays crisp and the type lockup uses the live site fonts.
+- Depth reveals: section headings swing up out of perspective, profile entries stagger in, and the logo flips into place in 3D on load.
+- Brand watermarks: a faint, drifting 3D monogram sits behind the contact headline and in the collection headers on the gallery pages.

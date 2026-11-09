@@ -1210,3 +1210,67 @@ body{padding-top:76px}
 @media(prefers-reduced-motion:reduce){
   .brand-mark-art,.brand-mark-glow{animation:none}
 }
+
+
+/* --- Logo entrance + depth reveals --------------------------------------- */
+.sp-logo-mark{animation:sdMarkIn 1.15s cubic-bezier(.2,.7,.2,1) both}
+@keyframes sdMarkIn{
+  0%{opacity:0;transform:rotateY(-42deg) rotateX(14deg) scale(.84)}
+  55%{opacity:1}
+  100%{opacity:1;transform:none}
+}
+.js-enabled .sp-section h2,
+.js-enabled .sp-work-heading h2,
+.js-enabled .sp-gallery-title h3{
+  transform-origin:50% 100%;
+  transform:perspective(900px) rotateX(9deg) translateY(18px);
+  opacity:0;
+  transition:transform .95s cubic-bezier(.2,.7,.2,1),opacity .8s ease;
+}
+.js-enabled .sp-section.is-visible h2,
+.js-enabled .sp-work-heading.is-visible h2,
+.js-enabled .sp-gallery-title.is-visible h3{transform:none;opacity:1}
+.js-enabled .sp-profile article{opacity:0;transform:translateY(14px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+.js-enabled .sp-profile.is-visible article{opacity:1;transform:none}
+.js-enabled .sp-profile.is-visible article:nth-of-type(2){transition-delay:.1s}
+
+/* --- Brand watermarks ---------------------------------------------------- */
+.sp-contact{position:relative;overflow:hidden}
+.sp-contact > *:not(.sp-contact-mark){position:relative;z-index:1}
+.sp-contact-mark{
+  position:absolute;right:-3%;bottom:4%;z-index:0;width:clamp(230px,33vw,500px);
+  pointer-events:none;opacity:.12;
+  translate:calc(var(--px,0) * -16px) calc(var(--py,0) * -10px);
+  transition:translate .7s cubic-bezier(.2,.7,.2,1);
+  animation:spMarkDrift 16s ease-in-out infinite;
+  -webkit-mask-image:linear-gradient(205deg,#000 34%,transparent 90%);
+  mask-image:linear-gradient(205deg,#000 34%,transparent 90%);
+}
+.collection-head > *:not(.collection-mark){position:relative;z-index:1}
+.collection-mark{
+  position:absolute;right:-2%;bottom:-8%;z-index:0;width:clamp(170px,23vw,320px);
+  pointer-events:none;opacity:.12;
+  translate:calc(var(--px,0) * -12px) calc(var(--py,0) * 9px);
+  transition:translate .7s cubic-bezier(.2,.7,.2,1);
+  animation:spMarkDrift 18s ease-in-out infinite;
+  -webkit-mask-image:linear-gradient(212deg,#000 26%,transparent 88%);
+  mask-image:linear-gradient(212deg,#000 26%,transparent 88%);
+}
+.sp-contact-mark svg,.collection-mark svg{display:block;width:100%;height:auto;
+  filter:drop-shadow(0 18px 44px rgba(255,40,56,.22))}
+@keyframes spMarkDrift{
+  0%,100%{transform:rotate(-2.2deg) translateY(0)}
+  50%{transform:rotate(1.8deg) translateY(-12px)}
+}
+@media(max-width:900px){
+  .sp-contact-mark{width:clamp(190px,44vw,320px);opacity:.1;right:-6%}
+  .collection-mark{width:clamp(130px,30vw,200px);opacity:.1;right:-4%;bottom:-10%}
+}
+@media(prefers-reduced-motion:reduce){
+  .sp-logo-mark{animation:none}
+  .sp-contact-mark,.collection-mark{animation:none}
+  .js-enabled .sp-section h2,
+  .js-enabled .sp-work-heading h2,
+  .js-enabled .sp-gallery-title h3,
+  .js-enabled .sp-profile article{opacity:1!important;transform:none!important;transition:none!important}
+}
